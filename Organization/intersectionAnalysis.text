@@ -1,0 +1,87 @@
+all intersections, with the variables that should belong only to household removed (see CommonVars.text)
+
+day cross house:
+HTEEMPDN - employee range, probably per person
+HH_HISP  - Person is hispanic (Person)
+HHC_MSA  - CMSA FIPS code for HH address (Household)
+TDAYDATE - travel day month and year (?)
+TDAYDAY  - travel day day (?)
+HBHUR    - Rural status (Household)
+HH_RACE  - Race of person (Person)
+HTPPOPDN - Population per square mile (Household)
+HHRESP   - Person ID of household respondent (Key for person, do not change)
+
+
+day, person:
+PERSONID - person id (Key for person, Keep)
+OUTOFTWN - trip was out for entire day (Trip)
+HTEEMPDN - employee range, probably per person#
+EDUC	 - Highest grade completed (Person)
+HHC_MSA  - CMSA FIPS code for HH address (Household)#
+TDAYDATE - travel day month and year (?)#
+PROXY	 - Trip info from another person (Trip)
+TRAVDAY  - Travel day of week (Trip)
+USEINTST - Interstate used? (Trip)
+HBHUR    - Rural status (Household)#
+HH_RACE  - Race of person (Person)#
+USEPUBTR - Use public transportation? (Trip)
+DRIVER   - If the person referenced by PERSONID was the driver (Not sure how this works, depends on trip? multiple trips per person?
+PRMACT   - Primary activity last week (Person)
+HTPPOPDN - Population per square mile (Household)#
+FRSTHM   - Did person start travel date at home (Again, not sure)
+R_SEX	 - Gender(Person)
+WORKER   - is employed? (Person)
+HHRESP   - Person ID of household respondent (Key for person, do not change)#
+HH_HISP  - Person is hispanic (Person)#
+R_AGE    - Age (Person)
+
+
+day, vehicle:
+PERSONID - person id (Key for person, Keep)#
+HTEEMPDN - employee range, probably per person#
+HH_HISP  - Person is hispanic (Person)#
+VEHID    - Vehicle number used for trip (might be a key? idk)
+HHC_MSA  - CMSA FIPS code for HH address (Household)#
+TDAYDATE - travel day month and year (?)#
+TRAVDAY  - Travel day of week (Trip)#
+HBHUR    - Rural status (Household)#
+HH_RACE  - Race of person (Person)#
+VEHTYPE  - Vehicle type (Vehicle)
+HTPPOPDN - Population per square mile (Household)#
+
+
+house, person:
+HTEEMPDN - employee range, probably per person - employee range, probably per person
+HH_HISP  - Person is hispanic (Person)
+VARSTRAT - Linearization Variance Stratum for Std Err Calculation (lol wut)
+HHC_MSA  - CMSA FIPS code for HH address (Household)
+TDAYDATE - travel day month and year (?)
+TRAVDAY  - Travel day of week (Trip)
+HBHUR    - Rural status (Household)
+HH_RACE  - Race of person (Person)
+HTPPOPDN - Population per square mile (Household)
+HHRESP   - Person ID of household respondent (Key for person, do not change)
+
+
+house, vehicle:
+HTEEMPDN - employee range, probably per person
+HH_HISP  - Person is hispanic (Person)
+HHC_MSA  - CMSA FIPS code for HH address (Household)
+TDAYDATE - travel day month and year (?)
+TRAVDAY  - Travel day of week (Trip)
+HBHUR    - Rural status (Household)
+HH_RACE  - Race of person (Person)
+WTHHFIN  - Final HH weight (Again wut?)
+HTPPOPDN - Population per square mile (Household)
+
+
+person, vehicle:
+PERSONID - person id (Key for person, Keep)
+HTEEMPDN - employee range, probably per person
+HH_HISP  - Person is hispanic (Person)
+HHC_MSA  - CMSA FIPS code for HH address (Household)
+TDAYDATE - travel day month and year (?)
+TRAVDAY  - Travel day of week (Trip)
+HBHUR    - Rural status (Household)
+HH_RACE  - Race of person (Person)
+HTPPOPDN - Population per square mile (Household)

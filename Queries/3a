@@ -1,0 +1,37 @@
+import psycopg2
+import csv
+
+#connect to database and set up to execute commands
+
+#connect to database (currently connecting to local db)
+conn = psycopg2.connect("dbname=postgres user=steve")
+
+#cursor to perform database operations
+cur = conn.cursor()
+
+#perform commands enclosed in parenthesis (must follow by cur.fetch___() to get tuple back)
+cur.execute("SELECT HOUSEID, PERSONID, TRPMILES FROM day")
+trips = cur.fetchall()
+
+
+d = {} #gonna have a dictionary with personid as the key, since I dont know how the fuck this shit works
+total = 0
+for t in trips:
+	uniqueId = t[0] * 100 + t[1] #generates a unique id based on house id and person id
+	if uniqueId not in d:
+		d[uniqueId] = 0
+		total += 1
+	d[uniqueId] += t[2]
+
+for r in range(5, 105, 5):
+	less = 0
+	for uniqueId, miles in d.iteritems():
+		if miles < r:
+			less += 1
+	print str(r) + ': ' + str(float(less) / total)
+
+#make changes to databse persistent
+
+#disconnect/close db
+cur.close()
+conn.close()
